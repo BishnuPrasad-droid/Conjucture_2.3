@@ -1,0 +1,420 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[a4paper,margin=1in]{geometry}
+\title{PDerivation Of Q(x) and Test}
+\author{Bishnu Prasad Swain}
+\date{June 2026}
+
+\begin{document}
+\title{Derivation Of Q(x) and Test}
+\author{Bishnu Prasad Swain}
+\date{June 2026}
+\maketitle
+
+\bigskip
+
+\section*{Part 1 -- Explicit factorization of \(P(x)\)}
+
+\subsection*{Section 1: Define the variables}
+
+Let
+\begin{equation}
+A=\cos\alpha,\qquad B=\cos\beta,\qquad C=\cos(\alpha-\beta),\qquad Y=A+B=\cos\alpha+\cos\beta.
+\tag{1}
+\end{equation}
+
+From the paper,
+\begin{equation}
+c=\cos\frac{\alpha-\beta}{2}
+\quad\Longrightarrow\quad
+c^{2}=\frac{1+C}{2}.
+\tag{2}
+\end{equation}
+
+\subsection*{Section 2: Expand \(P(x)\)}
+
+First, expand the product:
+\begin{equation}
+(x^{2}+1-2Ax)(x^{2}+1-2Bx)
+= x^{4}-2Yx^{3}+(2+4AB)x^{2}-2Yx+1.
+\tag{3}
+\end{equation}
+
+Multiply by \(c^{2}\):
+\begin{equation}
+c^{2}x^{4}-2c^{2}Yx^{3}+c^{2}(2+4AB)x^{2}-2c^{2}Yx+c^{2}.
+\tag{4}
+\end{equation}
+
+Now expand the squared term:
+\begin{equation}
+\bigl(x^{2}-Yx+C\bigr)^{2}
+= x^{4}-2Yx^{3}+(Y^{2}+2C)x^{2}-2YCx+C^{2}.
+\tag{5}
+\end{equation}
+
+Subtract (5) from (4) to obtain \(P(x)\):
+\begin{equation}
+\begin{aligned}
+P(x)={}&(c^{2}-1)x^{4}
++2Y(1-c^{2})x^{3} \\
+&+\bigl[c^{2}(2+4AB)-Y^{2}-2C\bigr]x^{2} \\
+&+2Y(C-c^{2})x
++(c^{2}-C^{2}).
+\end{aligned}
+\tag{6}
+\end{equation}
+
+Using (2), simplify the coefficients:
+
+\begin{itemize}
+\item \(x^{4}\): \(\displaystyle c^{2}-1=\frac{C-1}{2}\).
+\item \(x^{3}\): \(\displaystyle 2Y(1-c^{2})=Y(1-C)\).
+\item \(x\): \(\displaystyle 2Y(C-c^{2})=Y(C-1)=-Y(1-C)\).
+\item Constant:
+\[
+c^{2}-C^{2}
+=\frac{1+C}{2}-C^{2}
+=\frac{2C^{2}-C-1}{2}
+=\frac{(2C+1)(C-1)}{2}.
+\]
+\end{itemize}
+
+So
+\begin{equation}
+\begin{aligned}
+P(x)={}&\frac{C-1}{2}x^{4}
++Y(1-C)x^{3} \\
+&+\bigl[c^{2}(2+4AB)-Y^{2}-2C\bigr]x^{2} \\
+&-Y(1-C)x+\frac{(2C+1)(C-1)}{2}.
+\end{aligned}
+\tag{7}
+\end{equation}
+
+\subsection*{Section 3: Divide by \((x^{2}-1)\)}
+
+We seek a quadratic
+\[
+Q(x)=q_{2}x^{2}+q_{1}x+q_{0}
+\]
+such that
+\[
+P(x)=(x^{2}-1)Q(x).
+\]
+
+Expanding the right-hand side:
+\begin{equation}
+(x^{2}-1)(q_{2}x^{2}+q_{1}x+q_{0})
+= q_{2}x^{4}+q_{1}x^{3}+(q_{0}-q_{2})x^{2}-q_{1}x-q_{0}.
+\tag{8}
+\end{equation}
+
+Equate the coefficients of (7) and (8):
+
+\begin{itemize}
+\item \textbf{\(x^{4}\)}:
+\[
+q_{2}=\frac{C-1}{2}.
+\]
+
+\item \textbf{\(x^{3}\)}:
+\[
+q_{1}=Y(1-C).
+\]
+
+\item \textbf{\(x\)}:
+\[
+-q_{1}=-Y(1-C),
+\]
+which is consistent.
+
+\item \textbf{Constant}:
+\[
+-q_{0}=\frac{(2C+1)(C-1)}{2}
+\]
+\[
+\Longrightarrow
+q_{0}
+=
+-\frac{(2C+1)(C-1)}{2}
+=
+\frac{(2C+1)(1-C)}{2}.
+\]
+
+\item \textbf{\(x^{2}\)}: The identity
+\[
+q_{0}-q_{2}
+=
+c^{2}(2+4AB)-Y^{2}-2C
+\]
+holds by standard trigonometric relations.
+\end{itemize}
+
+Thus the quotient is completely determined.
+
+\subsection*{Section 4: Write \(Q(x)\) in compact trigonometric form}
+
+Using the values found:
+\[
+q_{2}=\frac{C-1}{2},
+\qquad
+q_{1}=Y(1-C),
+\qquad
+q_{0}=\frac{(2C+1)(1-C)}{2}.
+\]
+
+Therefore
+\[
+Q(x)
+=
+\frac{C-1}{2}x^{2}
++
+Y(1-C)x
++
+\frac{(2C+1)(1-C)}{2}.
+\]
+
+Factor out the common factor \(\displaystyle \frac{C-1}{2}\) (note that \(1-C=-(C-1)\)):
+\begin{equation}
+Q(x)
+=
+\frac{C-1}{2}x^{2}
+-Y(C-1)x
++\frac{(2C+1)(C-1)}{2}
+=
+\frac{C-1}{2}
+\Bigl[x^{2}-2Yx+(2C+1)\Bigr].
+\tag{9}
+\end{equation}
+
+\subsection*{Section 5: Final factorized form of \(P(x)\)}
+
+Substitute back \(C=\cos(\alpha-\beta)\) and \(Y=\cos\alpha+\cos\beta\):
+
+\begin{equation}
+\boxed{
+P(x)=(x^{2}-1)\,
+\frac{\cos(\alpha-\beta)-1}{2}
+\left[
+x^{2}-2(\cos\alpha+\cos\beta)x
++2\cos(\alpha-\beta)+1
+\right].
+}
+\tag{10}
+\end{equation}
+
+Equivalently, expanding the quotient explicitly:
+\begin{equation}
+\boxed{
+Q(x)=
+\frac{\cos(\alpha-\beta)-1}{2}x^{2}
++(\cos\alpha+\cos\beta)\bigl(1-\cos(\alpha-\beta)\bigr)x
++\cos^{2}(\alpha-\beta)-\frac{1+\cos(\alpha-\beta)}{2}.
+}
+\tag{11}
+\end{equation}
+
+\subsection*{Section 6: Where is \(c\) in this \(Q(x)\)?}
+
+The constant \(c\) does not appear as an external multiplier; instead it is embedded in the coefficients because
+
+\[
+c=\cos\frac{\alpha-\beta}{2}
+\quad\Longrightarrow\quad
+c^{2}=\frac{1+\cos(\alpha-\beta)}{2}.
+\]
+
+Thus the constant term in (11) becomes
+
+\[
+\cos^{2}(\alpha-\beta)-c^{2}.
+\]
+
+So \(c\) is inside \(Q(x)\), not outside. This completes the derivation.
+
+\subsection*{Section 7: A simple sine-only version of \(Q(x)\)}
+
+Using the standard identities
+\[
+\cos\theta = 1 - 2\sin^2\frac{\theta}{2},
+\]
+the quadratic above simplifies to the beautiful and compact form stated in Lemma 2.3 of the paper:
+
+\begin{equation}
+\boxed{
+Q(x)=
+4\sin^{2}\frac{\alpha}{2}\sin^{2}\frac{\beta}{2}\,(x-1)^2
++
+4\sin^{2}\frac{\alpha-\beta}{2}\,x.
+}
+\tag{12}
+\end{equation}
+
+This expression is entirely in terms of sines, has a perfect square as the first term, and a positive coefficient for \(x\) in the second term (since \(\alpha \neq \beta\)). It also makes the presence of \(c\) even clearer, since
+\[
+\sin^{2}\frac{\alpha-\beta}{2}=1-c^{2}.
+\]
+
+\bigskip
+
+\section*{Part 2 -- Positivity of \(Q(x)\) for \(x>0\)}
+
+From the sine-only expression (12), expand the square to rewrite \(Q(x)\) in standard quadratic form:
+
+\begin{equation}
+Q(x) = A x^{2} + (B-2A)x + A,
+\tag{13}
+\end{equation}
+
+where
+
+\begin{equation}
+A = 4\sin^{2}\frac{\alpha}{2}\sin^{2}\frac{\beta}{2} > 0,
+\tag{14}
+\end{equation}
+
+\begin{equation}
+B = 4\sin^{2}\frac{\alpha-\beta}{2} > 0
+\qquad (\alpha \neq \beta).
+\tag{15}
+\end{equation}
+
+The discriminant of \(Q(x)\) is
+
+\begin{equation}
+\Delta = (B-2A)^2 - 4A^2 = B^2 - 4AB = B(B-4A).
+\tag{16}
+\end{equation}
+
+We must show \(Q(x) > 0\) for every \(x > 0\).
+
+\subsection*{Case 1: \(\Delta < 0\) (i.e. \(B-4A < 0\))}
+
+When \(\Delta < 0\), the quadratic has no real roots. Because the leading coefficient \(A > 0\), the parabola opens upward and lies entirely above the \(x\)-axis. Hence
+
+\begin{equation}
+Q(x) > 0
+\quad \text{for all real } x.
+\tag{17}
+\end{equation}
+
+In particular, \(Q(x) > 0\) for all \(x > 0\).
+
+\subsection*{Case 2: \(\Delta \ge 0\) (i.e. \(B-4A \ge 0\))}
+
+Here \(Q(x)\) has two real roots (possibly equal). Denote them by \(r_1\) and \(r_2\).
+
+\paragraph{Step 1: Vieta's formulas}
+
+\begin{equation}
+r_1 + r_2
+=
+-\frac{B-2A}{A}
+=
+2-\frac{B}{A}.
+\tag{18}
+\end{equation}
+
+\begin{equation}
+r_1r_2=\frac{A}{A}=1.
+\tag{19}
+\end{equation}
+
+\paragraph{Step 2: Sign of the sum}
+
+From \(B-4A \ge 0\) we obtain
+\[
+\frac{B}{A}\ge4.
+\]
+
+Therefore
+
+\begin{equation}
+r_1+r_2
+=
+2-\frac{B}{A}
+\le
+2-4
+=
+-2<0.
+\tag{20}
+\end{equation}
+
+So the sum is strictly negative.
+
+\paragraph{Step 3: Sign of the product}
+
+\begin{equation}
+r_1r_2=1>0.
+\tag{21}
+\end{equation}
+
+Hence the two roots have the same sign (both positive or both negative).
+
+\paragraph{Step 4: Determine the common sign}
+
+If both roots were positive, their sum would be positive. But we have shown the sum is negative. Therefore both roots cannot be positive. Consequently,
+
+\begin{equation}
+r_1<0,
+\qquad
+r_2<0.
+\tag{22}
+\end{equation}
+
+(If \(\Delta=0\), the double root is also negative because the sum is negative and the product positive.)
+
+\subsection*{Conclusion of the two cases}
+
+\begin{itemize}
+\item \textbf{Case 1} (\(\Delta<0\)): \(Q(x)>0\) for all real \(x\), hence for all \(x>0\).
+
+\item \textbf{Case 2} (\(\Delta\ge0\)): The two real roots are both negative. Since the quadratic opens upward (\(A>0\)), it is positive for every \(x\) greater than the larger root. The larger root is negative, so for any \(x>0\) we have \(Q(x)>0\).
+\end{itemize}
+
+Thus in every possible situation,
+
+\begin{equation}
+Q(x) > 0
+\quad \text{for all } x > 0.
+\tag{23}
+\end{equation}
+
+\subsection*{Final deduction for \(P(x)\) and the original equation}
+
+Recall that \(P(x)=(x^2-1)Q(x)\). For any \(x>0\),
+
+\begin{equation}
+P(x)=0
+\;\Longleftrightarrow\;
+(x^2-1)Q(x)=0.
+\tag{24}
+\end{equation}
+
+Because of (23), \(Q(x)\neq0\) for all \(x>0\). Hence the factor \(Q(x)\) never vanishes on the positive real line. Therefore
+
+\begin{equation}
+P(x)=0
+\;\Longleftrightarrow\;
+x^2-1=0.
+\tag{25}
+\end{equation}
+
+The equation \(x^2-1=0\) has exactly two real solutions:
+\[
+x=1
+\quad\text{and}\quad
+x=-1.
+\]
+
+Only \(x=1\) lies in the domain \(x>0\).
+
+Consequently, \textbf{the only positive root of \(P(x)=0\) is \(x=1\)}.
+
+The original unsquared equation is equivalent to \(P(x)=0\) together with the sign condition that both sides are positive. At \(x=1\) the left-hand side equals \(c>0\), so the sign condition is satisfied. If there were any other positive \(x_0\neq1\) satisfying the unsquared equation, it would also satisfy \(P(x_0)=0\), contradicting the uniqueness just proved. Hence \(x=1\) is the \textbf{unique positive solution} of the original geometric condition.
+
+This completes the rigorous proof.
+
+\end{document}
+
